@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:online_photo_gallary/business_logic/home_cubit/home_cubit.dart';
 import 'package:online_photo_gallary/business_logic/log_in_cubit/log_in_cubit.dart';
 import 'package:online_photo_gallary/core/helper/services_helper.dart';
 import 'package:online_photo_gallary/presentation/screens/home_screen.dart';
@@ -21,6 +22,7 @@ class MyApp extends StatelessWidget {
     return MultiBlocProvider(
       providers: [
         BlocProvider(create: (context) => LogInCubit()),
+        BlocProvider(create: (context) => HomeCubit()),
       ],
       child: const _MyApp(),
     );

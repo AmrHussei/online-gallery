@@ -8,4 +8,5 @@ const String logOutIcon = 'assets/logOutIcon.png';
 class ApiConstant {
   static const String baseURL = 'https://technichal.prominaagency.com/api/';
   static const String logInUser = 'auth/login';
+  static const String getImages = 'my-gallery';
 }

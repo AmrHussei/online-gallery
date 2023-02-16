@@ -16,54 +16,55 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
-        child: Scaffold(
-      backgroundColor: MyColors.curvedColor,
-      body: Stack(
-        children: [
-          const BackgroundImageWidget(image: homeScreenBG),
-          Padding(
-            padding: EdgeInsets.all(20.h),
-            child: Column(
-              children: [
-                NameAndImageOfUser(
-                  onPressedOnUserImage:
-                      () {}, //to do allow user to dowenloade her photo **********************
-                ),
-                Padding(
-                  padding:
-                      EdgeInsets.symmetric(vertical: 22.h, horizontal: 10.w),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      BuilderOfLogOutAndUploadButton(
-                        onTap: () async {
-                          await BlocProvider.of<LogInCubit>(context).logOut();
-                          // ignore: use_build_context_synchronously
-                          Navigator.pushAndRemoveUntil(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => const LogInScreen()),
-                              (route) => false);
-                        },
-                        text: 'Log out',
-                        icon: logOutIcon,
-                      ),
-                      BuilderOfLogOutAndUploadButton(
-                        onTap: () {
-                          // todo Up Lad image **************
-                        },
-                        text: 'Upload',
-                        icon: uploadIcon,
-                      ),
-                    ],
+      child: Scaffold(
+        backgroundColor: MyColors.curvedColor,
+        body: Stack(
+          children: [
+            const BackgroundImageWidget(image: homeScreenBG),
+            Padding(
+              padding: EdgeInsets.all(20.h),
+              child: Column(
+                children: [
+                  NameAndImageOfUser(
+                    onPressedOnUserImage:
+                        () {}, //to do allow user to dowenloade her photo **********************
                   ),
-                ),
-                const ImagesViewer()
-              ],
-            ),
-          )
-        ],
+                  Padding(
+                    padding:
+                        EdgeInsets.symmetric(vertical: 22.h, horizontal: 10.w),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        BuilderOfLogOutAndUploadButton(
+                          onTap: () async {
+                            await BlocProvider.of<LogInCubit>(context).logOut();
+                            // ignore: use_build_context_synchronously
+                            Navigator.pushAndRemoveUntil(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => const LogInScreen()),
+                                (route) => false);
+                          },
+                          text: 'Log out',
+                          icon: logOutIcon,
+                        ),
+                        BuilderOfLogOutAndUploadButton(
+                          onTap: () {
+                            // todo Up Lad image **************
+                          },
+                          text: 'Upload',
+                          icon: uploadIcon,
+                        ),
+                      ],
+                    ),
+                  ),
+                  const ImagesViewer()
+                ],
+              ),
+            )
+          ],
+        ),
       ),
-    ));
+    );
   }
 }

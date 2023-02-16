@@ -7,14 +7,15 @@ part 'home_state.dart';
 
 class HomeCubit extends Cubit<HomeState> {
   HomeCubit() : super(HomeInitial());
-  List<String> images = [];
 
   getImages() async {
     try {
       emit(LoadingImage());
       GetImagesModel respons = await GetImagesRepo.getImages();
+
       emit(LoadedImage(respons.images));
-      images = respons.images;
+      print(
+          'imagesssssssssssssssssssssssssssssssssssssssssss ${respons.images}');
     } catch (error) {
       emit(ErrorImage());
       print(error.toString());

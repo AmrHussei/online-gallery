@@ -20,10 +20,10 @@ class LogInContainerWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Positioned.fill(
-      top: 320,
+      top: 370.h,
       right: 28.h,
       left: 28.h,
-      bottom: 40,
+      bottom: 45.h,
       child: ClipRect(
         child: BackdropFilter(
           filter: ImageFilter.blur(sigmaX: 8, sigmaY: 8),

@@ -8,7 +8,9 @@ class GetImagesServices {
         url: ApiConstant.getImages,
       );
     } catch (error) {
+      print('error get images ////////////////////////////////////////////');
       print(error.toString());
+
       return;
     }
   }

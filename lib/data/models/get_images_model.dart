@@ -8,11 +8,16 @@ class GetImagesModel {
   String status;
   String message;
   List<String> images;
-  factory GetImagesModel.fromJson(Map<String, dynamic> json) => GetImagesModel(
-        status: json["status"],
-        message: json["message"],
-        images: json["data"]["images"],
-      );
+  factory GetImagesModel.fromJson(Map<String, dynamic> json) {
+    List<dynamic> imagesList = json["data"]["images"];
+    List<String> castedImagesList =
+        imagesList.map((image) => image.toString()).toList();
+    return GetImagesModel(
+      status: json["status"],
+      message: json["message"],
+      images: castedImagesList,
+    );
+  }
 
   Map<String, dynamic> toJson() => {
         "status": status,

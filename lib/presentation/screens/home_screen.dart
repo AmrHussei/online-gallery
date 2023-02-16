@@ -9,6 +9,7 @@ import 'package:online_photo_gallary/presentation/screens/log_in_screen.dart';
 import '../widgets/home_screen_widget/builderOf_logOutAnd_upload_button.dart';
 import '../widgets/home_screen_widget/images_viewer.dart';
 import '../widgets/home_screen_widget/name_and_imageOf_user.dart';
+import '../widgets/home_screen_widget/show_upload_dialog.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -50,6 +51,7 @@ class HomeScreen extends StatelessWidget {
                         ),
                         BuilderOfLogOutAndUploadButton(
                           onTap: () {
+                            showUploadDialog(context);
                             // todo Up Lad image **************
                           },
                           text: 'Upload',
@@ -58,10 +60,10 @@ class HomeScreen extends StatelessWidget {
                       ],
                     ),
                   ),
-                  const ImagesViewer()
+                  const ImagesViewer(),
                 ],
               ),
-            )
+            ),
           ],
         ),
       ),

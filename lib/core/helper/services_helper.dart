@@ -26,6 +26,9 @@ class ServicesHelper {
   static Future<Response> getData({
     required String url,
   }) async {
-    return await dio.get(url);
+    return await dio.get(url,
+        options: Options(headers: {
+          "Authorization": "Bearer ${ApiConstant.token}",
+        }));
   }
 }

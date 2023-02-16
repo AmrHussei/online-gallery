@@ -3,6 +3,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:online_photo_gallary/business_logic/home_cubit/home_cubit.dart';
 import 'package:online_photo_gallary/business_logic/log_in_cubit/log_in_cubit.dart';
+import 'package:online_photo_gallary/business_logic/upload_cubit/upload_cubit.dart';
+import 'package:online_photo_gallary/core/constant.dart';
 import 'package:online_photo_gallary/core/helper/services_helper.dart';
 import 'package:online_photo_gallary/presentation/screens/home_screen.dart';
 import 'package:online_photo_gallary/presentation/screens/log_in_screen.dart';
@@ -22,7 +24,8 @@ class MyApp extends StatelessWidget {
     return MultiBlocProvider(
       providers: [
         BlocProvider(create: (context) => LogInCubit()),
-        BlocProvider(create: (context) => HomeCubit()),
+        BlocProvider(create: (context) => HomeCubit()..getImages()),
+        BlocProvider(create: (context) => UploadCubit()),
       ],
       child: const _MyApp(),
     );
@@ -48,6 +51,9 @@ class _MyAppState extends State<_MyApp> {
     final prefs = await SharedPreferences.getInstance();
     setState(() {
       _savedtoken = prefs.getString('token') ?? '';
+      ApiConstant.token = prefs.getString('token') ?? '';
+      print(' ApiConstant.token==============================');
+      print(ApiConstant.token);
     });
   }
 

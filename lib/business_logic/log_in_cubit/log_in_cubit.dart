@@ -1,6 +1,7 @@
 import 'package:bloc/bloc.dart';
 import 'package:flutter/foundation.dart';
 import 'package:meta/meta.dart';
+import 'package:online_photo_gallary/core/constant.dart';
 import 'package:online_photo_gallary/data/models/log_in_model.dart';
 import 'package:online_photo_gallary/data/repositories/log_in_repo.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -20,6 +21,7 @@ class LogInCubit extends Cubit<LogInState> {
       userData = await LogInRepo.logInUser(email: email, password: password);
       setToken();
       print('TOKEN *************************************');
+      ApiConstant.token = userData.token;
       print(userData.token);
       emit(SuccessLogIn());
     } catch (error) {

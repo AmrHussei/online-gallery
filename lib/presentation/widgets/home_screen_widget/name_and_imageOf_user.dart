@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:online_photo_gallary/core/constant.dart';
+import 'package:online_photo_gallary/core/my_colors.dart';
 
 import '../../../core/widgets/text_utils.dart';
 
@@ -16,15 +18,29 @@ class NameAndImageOfUser extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        SizedBox(
-          height: 85.h,
-          width: 145.w,
-          child: const TextUtils(
-              fontSize: 31,
-              fontWeight: FontWeight.normal,
-              text:
-                  'Welcom Mina', // todo get user name and showw it in ui ****************
-              underLine: TextDecoration.none),
+        Row(
+          children: [
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                const TextUtils(
+                    fontSize: 31,
+                    fontWeight: FontWeight.normal,
+                    text:
+                        'Welcom', // todo get user name and showw it in ui ****************
+                    underLine: TextDecoration.none),
+                Text(
+                  UserDataConstant.nameOfUser.substring(0, 12),
+                  overflow: TextOverflow.ellipsis,
+                  style: TextStyle(
+                    fontSize: 31,
+                    color: MyColors.blackMainText,
+                    fontWeight: FontWeight.normal,
+                  ),
+                ),
+              ],
+            ),
+          ],
         ),
         Padding(
           padding: EdgeInsets.fromLTRB(10, 0, 15.w, 30.h),
@@ -37,9 +53,7 @@ class NameAndImageOfUser extends StatelessWidget {
               width: 60.h,
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(50.sp),
-                  image: const DecorationImage(
-                      image: NetworkImage(
-                          'https://media.licdn.com/dms/image/C4D03AQG_gRF7HFQ4ww/profile-displayphoto-shrink_800_800/0/1662793286706?e=1681948800&v=beta&t=mFQ9xmSJDx0sn24E0w5CN2KnF2gaxZbTGPQWcGUpQsc'))),
+                  image: const DecorationImage(image: AssetImage(profile))),
             ),
           ),
         )

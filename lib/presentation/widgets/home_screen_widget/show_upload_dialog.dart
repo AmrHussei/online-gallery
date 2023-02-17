@@ -34,24 +34,27 @@ showUploadDialog(BuildContext context) {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  ButtonOfAlert(
-                    onTap: () async {
-                      File? imageFile =
-                          await BlocProvider.of<UploadCubit>(context)
-                              .getImageFromGallery();
-                      String token = ApiConstant.token;
-                      if (imageFile != null) {
-                        String response =
-                            // ignore: use_build_context_synchronously
+                  Padding(
+                    padding: EdgeInsets.only(top: 25.h),
+                    child: ButtonOfAlert(
+                      onTap: () async {
+                        File? imageFile =
                             await BlocProvider.of<UploadCubit>(context)
-                                .uploadImageToApi(imageFile, token);
+                                .getImageFromGallery();
+                        String token = ApiConstant.token;
+                        if (imageFile != null) {
+                          String response =
+                              // ignore: use_build_context_synchronously
+                              await BlocProvider.of<UploadCubit>(context)
+                                  .uploadImageToApi(imageFile, token);
 
-                        print(response);
-                      }
-                    },
-                    icon: gallery,
-                    color: MyColors.pink,
-                    text: 'Gallery',
+                          print(response);
+                        }
+                      },
+                      icon: gallery,
+                      color: MyColors.pink,
+                      text: 'Gallery',
+                    ),
                   ),
                   ButtonOfAlert(
                     onTap: () async {

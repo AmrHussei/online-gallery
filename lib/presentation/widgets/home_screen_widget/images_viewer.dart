@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:online_photo_gallary/business_logic/home_cubit/home_cubit.dart';
+import 'package:online_photo_gallary/core/widgets/text_utils.dart';
 
 import '../../../core/my_colors.dart';
 
@@ -14,12 +15,36 @@ class ImagesViewer extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocBuilder<HomeCubit, HomeState>(builder: (context, state) {
       if (state is LoadingImage) {
-        return const Center(
-          child: Text('Loadingggggggggggggg'),
+        return Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            SizedBox(height: 250.h),
+            Center(
+              child: Text(
+                'Loading....',
+                style: TextStyle(
+                    fontSize: 28.sp,
+                    fontWeight: FontWeight.w500,
+                    color: MyColors.blackMainText),
+              ),
+            ),
+          ],
         );
+        ;
       } else if (state is ErrorImage) {
-        return const Center(
-          child: Text('Errorrrrrrrrrrrrr'),
+        return Column(
+          children: [
+            SizedBox(height: 250.h),
+            Center(
+              child: Text(
+                'Somthing has wrong try again',
+                style: TextStyle(
+                    fontSize: 25.sp,
+                    fontWeight: FontWeight.w500,
+                    color: MyColors.blackMainText),
+              ),
+            ),
+          ],
         );
       } else if (state is LoadedImage) {
         return Expanded(
@@ -34,7 +59,7 @@ class ImagesViewer extends StatelessWidget {
               return Container(
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(25.sp),
-                  color: Colors.grey,
+                  color: Colors.white.withOpacity(0.5),
                   image: DecorationImage(
                     image: NetworkImage((state)
                         .listofImages[(state).listofImages.length - index - 1]),
@@ -46,7 +71,20 @@ class ImagesViewer extends StatelessWidget {
           ),
         );
       } else {
-        return Container();
+        return Column(
+          children: [
+            SizedBox(height: 250.h),
+            Center(
+              child: Text(
+                'Somthing has wrong',
+                style: TextStyle(
+                    fontSize: 25.sp,
+                    fontWeight: FontWeight.bold,
+                    color: MyColors.pink),
+              ),
+            ),
+          ],
+        );
       }
     });
   }

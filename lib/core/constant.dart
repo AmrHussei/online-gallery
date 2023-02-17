@@ -6,6 +6,7 @@ const String uploadIcon = 'assets/uploadIcon.png';
 const String logOutIcon = 'assets/logOutIcon.png';
 const String cameraButtonIcon = 'assets/cam.png';
 const String gallery = 'assets/gallery.png';
+const String profile = 'assets/profile.png';
 
 class ApiConstant {
   static const String baseURL = 'https://technichal.prominaagency.com/api/';
@@ -14,4 +15,8 @@ class ApiConstant {
   static const String uploadImage =
       'https://technichal.prominaagency.com/api/upload';
   static String token = '';
+}
+
+class UserDataConstant {
+  static String nameOfUser = '';
 }

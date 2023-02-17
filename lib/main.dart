@@ -52,6 +52,7 @@ class _MyAppState extends State<_MyApp> {
     setState(() {
       _savedtoken = prefs.getString('token') ?? '';
       ApiConstant.token = prefs.getString('token') ?? '';
+      UserDataConstant.nameOfUser = prefs.getString('UserName') ?? 'Mina';
       print(' ApiConstant.token==============================');
       print(ApiConstant.token);
     });

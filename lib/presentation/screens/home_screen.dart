@@ -23,7 +23,7 @@ class HomeScreen extends StatelessWidget {
           children: [
             const BackgroundImageWidget(image: homeScreenBG),
             Padding(
-              padding: EdgeInsets.all(20.h),
+              padding: EdgeInsets.fromLTRB(20.h, 20.h, 20.h, 0),
               child: Column(
                 children: [
                   NameAndImageOfUser(

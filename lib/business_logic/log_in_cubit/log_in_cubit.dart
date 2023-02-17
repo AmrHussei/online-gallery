@@ -19,7 +19,9 @@ class LogInCubit extends Cubit<LogInState> {
     try {
       emit(TryLogIn());
       userData = await LogInRepo.logInUser(email: email, password: password);
-      setToken();
+      await setToken();
+      await setUserName();
+      getUserName();
       print('TOKEN *************************************');
       ApiConstant.token = userData.token;
       print(userData.token);
@@ -45,5 +47,17 @@ class LogInCubit extends Cubit<LogInState> {
   logOut() async {
     final prefs = await initShardPrefs();
     await prefs.setString('token', '');
+  }
+
+  setUserName() async {
+    final prefs = await initShardPrefs();
+    String name = userData.name;
+    await prefs.setString('UserName', name);
+  }
+
+  getUserName() async {
+    final prefs = await initShardPrefs();
+
+    UserDataConstant.nameOfUser = prefs.getString('UserName') ?? '';
   }
 }

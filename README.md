@@ -1,6 +1,6 @@
 # online-gallery
 
-The idea of this application is that the user logs in the Authentication done using API, and then the user can upload any image on his device to the server, and it is stored accordingly with the token, so that each user has his own copy of the data. The images are uploaded using the gallery or camera
+The idea of this application is that the user logs in the app, and Authentication done using API, and then the user can upload any image on his device to the server, and it is stored accordingly with the token, so that each user has his own copy of the data. The images are uploaded using the gallery or camera
 
 ## Used Tools
 - Flutter  

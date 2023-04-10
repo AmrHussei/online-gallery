@@ -22,8 +22,8 @@ https://user-images.githubusercontent.com/94804979/219868733-a49ecaf8-73f7-4aeb-
 - Home Screen
 
 ## Screenshots
-![1](https://user-images.githubusercontent.com/94804979/219868298-6cdfd348-5e17-4040-a9df-7bbdb0c78de0.png)
-![2](https://user-images.githubusercontent.com/94804979/219868304-105474ba-f251-4e0f-bbdc-a94d7dc6f88a.png)
+![Screenshot 2023-04-10 193055](https://user-images.githubusercontent.com/94804979/230957665-a80c9472-1f84-423e-8275-1111fded829b.png)
+![Screenshot 2023-04-10 193120](https://user-images.githubusercontent.com/94804979/230957685-e7dcd1dd-4367-4fa1-92fc-cf3b25e83202.png)
 ![3](https://user-images.githubusercontent.com/94804979/219868311-b1252134-9e4c-434a-9253-4f21bd39a968.png)
 ![4](https://user-images.githubusercontent.com/94804979/219868318-c7a3aede-6ddb-4f3c-aa5a-00de082ec347.png)
 

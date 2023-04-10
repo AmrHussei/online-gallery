@@ -40,11 +40,11 @@ class HomeScreen extends StatelessWidget {
                           onTap: () async {
                             await BlocProvider.of<LogInCubit>(context).logOut();
                             // ignore: use_build_context_synchronously
-                            Navigator.pushAndRemoveUntil(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => const LogInScreen()),
-                                (route) => false);
+                            Navigator.pushReplacement(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => const LogInScreen()),
+                            );
                           },
                           text: 'Log out',
                           icon: logOutIcon,

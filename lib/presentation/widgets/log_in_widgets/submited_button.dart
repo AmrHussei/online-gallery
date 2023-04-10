@@ -16,7 +16,7 @@ class SubmitedButton extends StatelessWidget {
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(8.sp),
           ),
-          padding: EdgeInsets.symmetric(horizontal: 100.w)),
+          padding: EdgeInsets.symmetric(horizontal: 120.w)),
       child: Text(
         'SUBMIT',
         style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20.h),
